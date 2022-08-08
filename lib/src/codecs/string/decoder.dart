@@ -91,8 +91,7 @@ class RecurrenceRuleFromStringDecoder
             value,
             oldValue: untilOrCount,
             parse: () {
-              final match =
-                  DateTime.tryParse(value)?.toLocal().copyWith(isUtc: true);
+              final match = DateTime.tryParse(value)?.toLocal();
               if (match == null) {
                 throw FormatException(
                   'Cannot parse date or date-time: "$value".',

@@ -60,7 +60,9 @@ void main() {
         codec.decode('RRULE:FREQ=DAILY;UNTIL=20200101T123456Z'),
         RecurrenceRule(
           frequency: Frequency.daily,
-          until: DateTime.utc(2020, 1, 1, 12, 34, 56),
+          until: DateTime.utc(2020, 1, 1, 12, 34, 56)
+              .toLocal()
+              .copyWith(isUtc: true),
         ),
       );
     });

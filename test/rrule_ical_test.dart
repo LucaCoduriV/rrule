@@ -49,7 +49,7 @@ void main() {
   );
   testRrule(
     'Daily until December 24, 1997',
-    string: 'RRULE:FREQ=DAILY;UNTIL=19971224T000000Z',
+    string: 'RRULE:FREQ=DAILY;UNTIL=19971224T010000Z',
     text: 'Daily, until Wednesday, December 24, 1997 12:00:00 AM',
     rrule: RecurrenceRule(
       frequency: Frequency.daily,
@@ -158,7 +158,7 @@ void main() {
   );
   testRrule(
     'Weekly until December 24, 1997',
-    string: 'RRULE:FREQ=WEEKLY;UNTIL=19971224T000000Z',
+    string: 'RRULE:FREQ=WEEKLY;UNTIL=19971224T010000Z',
     text: 'Weekly, until Wednesday, December 24, 1997 12:00:00 AM',
     rrule: RecurrenceRule(
       frequency: Frequency.weekly,

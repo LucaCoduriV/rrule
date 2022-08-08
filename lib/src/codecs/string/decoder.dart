@@ -91,15 +91,8 @@ class RecurrenceRuleFromStringDecoder
             value,
             oldValue: untilOrCount,
             parse: () {
-              // Remove the optional "Z" suffix indicating a time in UTC as we
-              // ignore time zones.
-              final normalizedValue = value.endsWith('Z')
-                  ? value.substring(0, value.length - 1)
-                  : value;
               final match =
-                  normalizedValue.length == 8 || normalizedValue.length == 15
-                      ? DateTime.tryParse(normalizedValue)
-                      : null;
+                  DateTime.tryParse(value)?.toLocal().copyWith(isUtc: true);
               if (match == null) {
                 throw FormatException(
                   'Cannot parse date or date-time: "$value".',
